@@ -1,4 +1,4 @@
-"""src URL Configuration."""
+"""config URL Configuration."""
 
 from django.urls import include, path
 

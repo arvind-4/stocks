@@ -1,4 +1,4 @@
-"""Django settings for src project."""
+"""Django settings for config project."""
 
 import os
 from pathlib import Path
@@ -35,7 +35,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "src.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -53,7 +53,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "src.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {}
 
