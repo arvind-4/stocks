@@ -12,6 +12,8 @@ charset-normalizer==3.4.7
     # via
     #   commitizen
     #   requests
+click==8.4.1
+    # via uvicorn
 colorama==0.4.6
     # via commitizen
 commitizen==4.16.2
@@ -28,6 +30,12 @@ filelock==3.29.0
     # via
     #   python-discovery
     #   virtualenv
+gunicorn==26.0.0
+    # via stocks (pyproject.toml)
+h11==0.16.0
+    # via uvicorn
+honcho==2.0.0
+    # via stocks (pyproject.toml:dev)
 identify==2.6.19
     # via pre-commit
 idna==3.16
@@ -39,7 +47,9 @@ markupsafe==3.0.3
 nodeenv==1.10.0
     # via pre-commit
 packaging==26.2
-    # via commitizen
+    # via
+    #   commitizen
+    #   gunicorn
 platformdirs==4.9.6
     # via
     #   python-discovery
@@ -72,6 +82,8 @@ tomlkit==0.15.0
     # via commitizen
 urllib3==2.7.0
     # via requests
+uvicorn==0.48.0
+    # via stocks (pyproject.toml)
 virtualenv==21.3.3
     # via pre-commit
 wcwidth==0.7.0
