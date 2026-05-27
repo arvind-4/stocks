@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: uv-compile
+        name: Compile requirements.txt from pyproject.toml
+        entry: uv pip compile pyproject.toml
+        args: [-o, requirements.txt]
+        language: system
+        pass_filenames: false
+        files: ^pyproject\.toml$
+
+      - id: uv-compile-dev
+        name: Compile requirements-dev.txt from pyproject.toml
+        entry: uv pip compile pyproject.toml
+        args: [-o, requirements-dev.txt, --group, dev]
+        language: system
+        pass_filenames: false
+        files: ^pyproject\.toml$
