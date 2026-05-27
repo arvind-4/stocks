@@ -1,3 +1,3 @@
-from django.db import models
+"""Models for the stocks app."""
 
 # Create your models here.
