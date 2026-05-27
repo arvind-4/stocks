@@ -1,4 +1,0 @@
-django
-requests
-whitenoise
-python-decouple
