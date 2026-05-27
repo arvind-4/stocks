@@ -1,5 +1,9 @@
 """ASGI application entrypoint."""
 
-from src.wsgi import application
+import os
 
-app = application
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+
+app = get_wsgi_application()
