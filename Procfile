@@ -1,1 +1,1 @@
-web: gunicorn src.wsgi
+web: gunicorn config.asgi --workers 4 --worker-class uvicorn.workers.UvicornWorker
