@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo "Upgrade pip..."
-python3.12 -m pip install --upgrade pip
-
-echo "Installing dependencies..."
-python3.12 -m pip install -r requirements.txt
+echo "Installing packages..."
+uv sync --locked
 
 echo "Collecting static files..."
-python3.12 manage.py collectstatic  --noinput --clear
+uv run python manage.py collectstatic  --noinput --clear
