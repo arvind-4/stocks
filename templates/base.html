@@ -1,1 +1,28 @@
-<!doctype html>{% load static %}<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="{% static '/stocks/img/favicon.png' %}"/>{% include 'css/css.html' %}<title>{% block title %}{% endblock %}</title></head><body>{% include 'components/navbar.html' %}<div class="container min-vh-100">{% block content %}{% endblock %}</div>{% include 'components/footer.html' %}<br></body>{% include 'js/js.html' %}</html>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Stocks">
+    <meta name="keywords" content="stocks, crypto, finance">
+    <link rel="icon"
+          type="image/png"
+          href="{% static '/stocks/img/favicon.png' %}" />
+    {% include "css/css.html" %}
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
+    {% include "components/navbar.html" %}
+    <div class="container min-vh-100">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    {% include "components/footer.html" %}
+    <br>
+  </body>
+  {% include "js/js.html" %}
+</html>

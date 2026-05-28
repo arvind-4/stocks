@@ -1,1 +1,34 @@
-{% extends 'base.html' %}{% load static %}{% block title %}{{ticker}}{% endblock %}{% block content %}<br><br><br><table class="table table-striped"> <thead> <tr> <th scope="col">Name</th> <th scope="col">Stock Name</th> <th scope="col">Assert Type</th> <th scope="col">Country Code</th> <th scope="col">Stock is Active</th> </tr></thead>{% for i in data %}<tbody> <tr> <th scope="row">{{i.name}}</th> <td><a href="/stockdata/{{i.ticker.lower}}"><b>{{i.ticker}}</b></a></td><td>{{i.assetType}}</td><td>{{i.countryCode}}</td><td>{{i.isActive}}</td></tr></tbody>{% endfor %}</table>{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  {{ ticker }}
+{% endblock title %}
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Stock Name</th>
+        <th scope="col">Assert Type</th>
+        <th scope="col">Country Code</th>
+        <th scope="col">Stock is Active</th>
+      </tr>
+    </thead>
+    {% for i in data %}
+      <tbody>
+        <tr>
+          <th scope="row">{{ i.name }}</th>
+          <td>
+            <a href="{% url 'redirect_price' stock_code=i.ticker.lower %}"><b>{{ i.ticker }}</b></a>
+          </td>
+          <td>{{ i.assetType }}</td>
+          <td>{{ i.countryCode }}</td>
+          <td>{{ i.isActive }}</td>
+        </tr>
+      </tbody>
+    {% endfor %}
+  </table>
+{% endblock content %}

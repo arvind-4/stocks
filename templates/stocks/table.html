@@ -1,1 +1,132 @@
-{% extends 'base.html' %}{% block title %}{{stock_code}}{% endblock %}{% block content %}<br><br><br><div class="text-center"> <h1>Stock Name:{{stock_code}}</h1> <br><h1>Company Name:{{meta_data.name}}</h1> </div><br><br><div class="text-center"> <h2>Description</h2> <p>{{meta_data.description}}</p><br><h4>Exchange Code:{{meta_data.exchangeCode}}</h4> <br><h4>Start Date:{{meta_data.startDate}}</h4> <br><h4>End Date:{{meta_data.endDate}}</h4> <br></div><br><br><br><div class="text-center"> <h2>Data of{{stock_code}}</h2> </div><br><br><table class="table table-striped"> <thead> <tr> <th scope="col"></th> <th scope="col">Field</th> <th scope="col">Information</th> </tr></thead>{% for i in data %}<tbody> <tr> <th scope="row"></th> <td><b>Open</b></td><td>{{i.open}}</td></tr><tr> <th scope="row"></th> <td><b>High</b></td><td>{{i.high}}</td></tr><tr> <th scope="row"></th> <td><b>Low</b></td><td>{{i.low}}</td></tr><tr> <th scope="row"></th> <td><b>Close</b></td><td>{{i.close}}</td></tr><tr> <th scope="row"></th> <td><b>Volume</b></td><td>{{i.volume}}</td></tr><tr> <th scope="row"></th> <td><b>Adjusted Open</b></td><td>{{i.adjOpen}}</td></tr><tr> <th scope="row"></th> <td><b>Adjusted High</b></td><td>{{i.adjHigh}}</td></tr><tr> <th scope="row"></th> <td><b>Adjusted Low</b></td><td>{{i.adjLow}}</td></tr><tr> <th scope="row"></th> <td><b>Adjusted Close</b></td><td>{{i.adjClose}}</td></tr><tr> <th scope="row"></th> <td><b>Adjusted Volume</b></td><td>{{i.adjVolume}}</td></tr><tr> <th scope="row"></th> <td><b>Divident</b></td><td>{{i.divCash}}</td></tr><tr> <th scope="row"></th> <td><b>Split</b></td><td>{{i.splitFactor}}</td></tr></tbody>{% endfor %}</table>{% endblock %}
+{% extends "base.html" %}
+{% block title %}
+  {{ stock_code }}
+{% endblock title %}
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>Stock Name:{{ stock_code }}</h1>
+    <br>
+    <h1>Company Name:{{ meta_data.name }}</h1>
+  </div>
+  <br>
+  <br>
+  <div class="text-center">
+    <h2>Description</h2>
+    <p>{{ meta_data.description }}</p>
+    <br>
+    <h4>Exchange Code:{{ meta_data.exchangeCode }}</h4>
+    <br>
+    <h4>Start Date:{{ meta_data.startDate }}</h4>
+    <br>
+    <h4>End Date:{{ meta_data.endDate }}</h4>
+    <br>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h2>Data of{{ stock_code }}</h2>
+  </div>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Field</th>
+        <th scope="col">Information</th>
+      </tr>
+    </thead>
+    {% for i in data %}
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Open</b>
+          </td>
+          <td>{{ i.open }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>High</b>
+          </td>
+          <td>{{ i.high }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Low</b>
+          </td>
+          <td>{{ i.low }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Close</b>
+          </td>
+          <td>{{ i.close }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Volume</b>
+          </td>
+          <td>{{ i.volume }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Adjusted Open</b>
+          </td>
+          <td>{{ i.adjOpen }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Adjusted High</b>
+          </td>
+          <td>{{ i.adjHigh }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Adjusted Low</b>
+          </td>
+          <td>{{ i.adjLow }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Adjusted Close</b>
+          </td>
+          <td>{{ i.adjClose }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Adjusted Volume</b>
+          </td>
+          <td>{{ i.adjVolume }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Divident</b>
+          </td>
+          <td>{{ i.divCash }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <b>Split</b>
+          </td>
+          <td>{{ i.splitFactor }}</td>
+        </tr>
+      </tbody>
+    {% endfor %}
+  </table>
+{% endblock content %}

@@ -1,1 +1,29 @@
-{% extends 'base.html' %}{% block title %}Stock Details{% endblock %}{% block content %}<br><br><br><br><br><div class="text-center"> <h1><b><u>Some Frequently asked Questions</u></b></h1><br><br></div><div class="text-center">{% for i in data %}<font color="#0000FF"><h3>* What is{{i.name}}?</h3></font><br><h4>{{i.description}}</h4> <br><br>{% endfor %}</div>{% endblock %}
+{% extends "base.html" %}
+{% block title %}
+  Stock Details
+{% endblock title %}
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>
+      <b><u>Some Frequently asked Questions</u></b>
+    </h1>
+    <br>
+    <br>
+  </div>
+  <div class="text-center">
+    {% for i in data %}
+      <font color="#0000FF">
+        <h3>* What is{{ i.name }}?</h3>
+      </font>
+      <br>
+      <h4>{{ i.description }}</h4>
+      <br>
+      <br>
+    {% endfor %}
+  </div>
+{% endblock content %}

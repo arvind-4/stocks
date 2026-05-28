@@ -1,1 +1,30 @@
-{% extends 'base.html' %}{% block title %}Stocks{% endblock %}{% block content %}<br><br><br><div class="text-center"> <h2> Enter a Valid Stock Name </h2> <br><hr> </div><div class="text-center"> <form method="POST"> <br><br>{% csrf_token %}<div class="text-center offset-3 col-6">{{form}}</div><div class="text-center"> <br><br><button type="submit" value="submit" class="btn btn-success">Go</button><br></div></form> <br><br></div>{% endblock %}
+{% extends "base.html" %}
+{% block title %}
+  Stocks
+{% endblock title %}
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h2>Enter a Valid Stock Name</h2>
+    <br>
+    <hr>
+  </div>
+  <div class="text-center">
+    <form method="post">
+      <br>
+      <br>
+      {% csrf_token %}
+      <div class="text-center offset-3 col-6">{{ form }}</div>
+      <div class="text-center">
+        <br>
+        <br>
+        <button type="submit" value="submit" class="btn btn-success">Go</button>
+        <br>
+      </div>
+    </form>
+    <br>
+    <br>
+  </div>
+{% endblock content %}

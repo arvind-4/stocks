@@ -1,1 +1,39 @@
-{% extends 'base.html' %}{% block title %}Cryto Currency{% endblock %}{% block content %}<br><br><br><div class="text-center"> <h1>List of Cryto Currencies</h1> </div><br><br><br><div class="text-center"><table class="table"> <thead> <tr> <th scope="col">#</th> <th scope="col">Name</th> <th scope="col">Base Currency</th> <th scope="col">Quote Currency</th> <th scope="col">Crypto Code</th> </tr></thead>{% for i in data %}<tbody> <tr> <th scope="row">{{forloop.counter}}</th> <td>{{i.name}}</td><td>{{i.baseCurrency}}</td><td>{{i.quoteCurrency}}</td><td>{{i.ticker}}</td></tr></tbody>{% endfor %}</table> </div>{% endblock %}
+{% extends "base.html" %}
+{% block title %}
+  Cryto Currency
+{% endblock title %}
+{% block content %}
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <h1>List of Cryto Currencies</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Base Currency</th>
+          <th scope="col">Quote Currency</th>
+          <th scope="col">Crypto Code</th>
+        </tr>
+      </thead>
+      {% for i in data %}
+        <tbody>
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ i.name }}</td>
+            <td>{{ i.baseCurrency }}</td>
+            <td>{{ i.quoteCurrency }}</td>
+            <td>{{ i.ticker }}</td>
+          </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock content %}
