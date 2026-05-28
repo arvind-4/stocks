@@ -1,18 +1,32 @@
 repos:
   - repo: local
     hooks:
-      - id: uv-compile
-        name: Compile requirements.txt from pyproject.toml
-        entry: uv pip compile pyproject.toml
-        args: [-o, requirements.txt]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format .
         language: system
         pass_filenames: false
-        files: ^pyproject\.toml$
 
-      - id: uv-compile-dev
-        name: Compile requirements-dev.txt from pyproject.toml
-        entry: uv pip compile pyproject.toml
-        args: [-o, requirements-dev.txt, --group, dev]
+      - id: ruff-lint
+        name: ruff lint
+        entry: uv run ruff check .
         language: system
         pass_filenames: false
-        files: ^pyproject\.toml$
+
+      - id: pyright
+        name: pyright
+        entry: uv run pyright .
+        language: system
+        pass_filenames: false
+
+      - id: djlint
+        name: djlint
+        entry: uv run djlint --check templates/
+        language: system
+        pass_filenames: false
+
+      - id: bun-check
+        name: Check the format of static files
+        entry: bun run check
+        language: system
+        pass_filenames: false

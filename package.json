@@ -1,5 +1,9 @@
 {
   "dependencies": {},
+  "scripts": {
+    "fmt": "prettier --write .",
+    "check": "prettier --check ."
+  },
   "devDependencies": {
     "opencode-ai": "^1.15.11",
     "prettier": "^3.8.3",

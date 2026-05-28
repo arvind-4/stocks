@@ -15,7 +15,21 @@ dependencies = [
 [dependency-groups]
 dev = [
     "commitizen>=4.16.2",
+    "django-stubs>=6.0.5",
+    "djlint>=1.36.4",
     "honcho>=2.0.0",
     "pre-commit>=4.6.0",
+    "pyright>=1.1.409",
     "ruff>=0.15.14",
 ]
+
+[tool.djlint]
+indent=2
+profile="django"
+use_gitignore=true
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"

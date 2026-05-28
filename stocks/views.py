@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 
 from stocks.forms import StocksForm
-from stocks.information import (
+from stocks.infrastructure.external_client.tingo_stock_client import (
     get_meta_data,
     get_price_information,
     get_search_data,
@@ -17,8 +17,7 @@ def home_page_view(request: HttpRequest) -> HttpResponse:
     """Home page view for stock search."""
     form = StocksForm(request.POST or None)
     if form.is_valid():
-        stock_name = request.POST["name"]
-        stock_name = stock_name.lower()
+        stock_name = form.cleaned_data["name"]
         if stock_name:
             return HttpResponseRedirect(stock_name)
     context = {
